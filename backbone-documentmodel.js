@@ -227,7 +227,7 @@
             _.each(_.keys(models), function (modelKey) {
                 var modelValues = models[modelKey].toJSON();
 
-                if (this.pseudoIdAttribute) {
+                if (this.pseudoIdAttribute && typeof(modelValues.value) != 'undefined') {
                     modelValues = modelValues.value;
                 }
 
